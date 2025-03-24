@@ -17,7 +17,8 @@ logging.getLogger("asyncio").setLevel(logging.ERROR)
 logging.getLogger("charset_normalizer").setLevel(logging.ERROR)
 logging.getLogger("torchaudio._extension").setLevel(logging.ERROR)
 logging.getLogger("multipart.multipart").setLevel(logging.ERROR)
-import LangSegment, os, re, sys, json
+from .TTS_infer_pack import LangSegment
+import os, re, sys, json
 import pdb
 import torch
 

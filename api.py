@@ -150,7 +150,7 @@ sys.path.append(now_dir)
 sys.path.append("%s/GPT_SoVITS" % (now_dir))
 
 import signal
-import LangSegment
+from GPT_SoVITS.TTS_infer_pack import LangSegment
 from time import time as ttime
 import torch
 import librosa
