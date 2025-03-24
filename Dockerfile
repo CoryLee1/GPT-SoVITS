@@ -19,6 +19,8 @@ WORKDIR /workspace
 COPY requirements.txt /workspace/
 RUN pip install --no-cache-dir -r requirements.txt
 
+COPY ./Docker/LangSegment/__init__.py /usr/local/lib/python3.10/dist-packages/LangSegment/__init__.py
+
 # Define a build-time argument for image type
 ARG IMAGE_TYPE=full
 
