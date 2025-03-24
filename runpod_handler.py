@@ -8,7 +8,7 @@ from GPT_SoVITS.TTS_infer_pack.TTS import TTS, TTS_Config
 from api_v2 import tts_handle, check_params
 
 # 初始化推理模型
-config_path = "GPT_SoVITS/configs/tts_infer.yaml"
+config_path = f"{os.getcwd()}/GPT_SoVITS/configs/tts_infer.yaml"
 tts_config = TTS_Config(config_path)
 print(tts_config)
 tts_pipeline = TTS(tts_config)
