@@ -34,7 +34,15 @@ RUN if [ "$IMAGE_TYPE" != "elite" ]; then \
         python /workspace/Docker/download.py && \
         python -m nltk.downloader averaged_perceptron_tagger averaged_perceptron_tagger_eng cmudict && \
         git clone https://huggingface.co/lj1995/GPT-SoVITS && \
-        mv GPT-SoVITS/* /workspace/GPT_SoVITS/pretrained_models/; \
+        # 删除旧内容（强制递归删除）
+        rm -rf /workspace/GPT-SoVITS/pretrained_models/ && \
+        # 创建目录并设置权限
+        mkdir -p /workspace/GPT-SoVITS/pretrained_models/ && \
+        chmod 777 /workspace/GPT-SoVITS/pretrained_models/ && \
+        # 移动所有内容（包括隐藏文件）
+        shopt -s dotglob && \
+        mv GPT-SoVITS/* /workspace/GPT-SoVITS/pretrained_models/ && \
+        shopt -u dotglob; \
     fi
 
 
