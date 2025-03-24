@@ -32,7 +32,9 @@ RUN if [ "$IMAGE_TYPE" != "elite" ]; then \
         chmod +x /workspace/Docker/download.sh && \
         /workspace/Docker/download.sh && \
         python /workspace/Docker/download.py && \
-        python -m nltk.downloader averaged_perceptron_tagger averaged_perceptron_tagger_eng cmudict; \
+        python -m nltk.downloader averaged_perceptron_tagger averaged_perceptron_tagger_eng cmudict; && \
+        git lfs clone https://huggingface.co/lj1995/GPT-SoVITS && \
+        mv GPT-SoVITS/* /workspace/GPT_SoVITS/pretrained_models/ \
     fi
 
 
