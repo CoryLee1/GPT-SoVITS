@@ -23,11 +23,11 @@ PyYAML
 psutil
 jieba_fast
 jieba
-LangSegment>=0.3.0
+LangSegment>=0.2.0
 Faster_Whisper
 wordsegment
 rotary_embedding_torch
-ToJyutping 
+ToJyutping
 g2pk2
 ko_pron
 opencc; sys_platform != 'linux'
