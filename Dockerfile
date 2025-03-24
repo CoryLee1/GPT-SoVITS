@@ -33,8 +33,8 @@ RUN if [ "$IMAGE_TYPE" != "elite" ]; then \
         /workspace/Docker/download.sh && \
         python /workspace/Docker/download.py && \
         python -m nltk.downloader averaged_perceptron_tagger averaged_perceptron_tagger_eng cmudict && \
-        rm -rf /workspace/GPT-SoVITS/pretrained_models/ && \
-        git clone https://huggingface.co/lj1995/GPT-SoVITS /workspace/GPT-SoVITS/pretrained_models; \
+        rm -rf /workspace/GPT_SoVITS/pretrained_models/ && \
+        git clone https://huggingface.co/lj1995/GPT-SoVITS /workspace/GPT_SoVITS/pretrained_models; \
     fi
 
 
