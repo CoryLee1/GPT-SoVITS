@@ -330,10 +330,6 @@ async def tts_handle(req:dict):
             return Response(audio_data, media_type=f"audio/{media_type}")
     except Exception as e:
         return JSONResponse(status_code=400, content={"message": f"tts failed", "Exception": str(e)})
-    
-
-
-
 
 
 @APP.get("/control")
