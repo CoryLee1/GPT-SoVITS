@@ -19,8 +19,6 @@ WORKDIR /workspace
 COPY requirements.txt /workspace/
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./Docker/LangSegment/__init__.py /usr/local/lib/python3.10/dist-packages/LangSegment/__init__.py
-
 # Define a build-time argument for image type
 ARG IMAGE_TYPE=full
 
@@ -34,7 +32,8 @@ RUN if [ "$IMAGE_TYPE" != "elite" ]; then \
         python /workspace/Docker/download.py && \
         python -m nltk.downloader averaged_perceptron_tagger averaged_perceptron_tagger_eng cmudict && \
         rm -rf /workspace/GPT_SoVITS/pretrained_models/ && \
-        git clone https://huggingface.co/lj1995/GPT-SoVITS /workspace/GPT_SoVITS/pretrained_models; \
+        git clone https://huggingface.co/lj1995/GPT-SoVITS /workspace/GPT_SoVITS/pretrained_models && \
+        python /workspace/Docker/download_g2pw.py; \
     fi
 
 
